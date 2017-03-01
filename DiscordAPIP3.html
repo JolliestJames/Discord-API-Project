@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<header>
+	<meta charset = "UTF-8">
+	<title>How-to Project</title>
+	<link rel = "stylesheet" href = "style.css">
+	<script src = "DiscordAPIP.js"></script>
+</header>
+
+<body>
+	<div id = "main_div">
+		<h2>Make a Bot!</h2>
+		<p>
+			Before we can start programming our bot, we need to officially make an app
+			for Discord so we can acquire a login token first. Thankfully, Discord makes this process easy.
+			After making sure you've logged into your Discord account, visit the
+			<a href = "https://discordapp.com/developers/applications/me" target = "_blank">Discord apps</a>
+			page. Here you should see an option to make a new app for discord.
+		</p>
+		<img src = "MyApps.png">
+		<p>
+			Go ahead and click on the New App box and fill in the necessary fields. We'll name our app "TestBot". 
+			When you're ready, go ahead and click "Create App".
+		</p>
+		<img src = "NewApp.png">
+		<p>
+			Now we're one step away from creating our bot. You should have been greeted with a messsage
+			letting you know your app was successfully created. Just below that, you should see an option to "Create
+			a Bot User". This is exactly what we want to do, so go ahead and click this option and then confirm it's
+			what you want to do.
+		</p>
+		<img src = "CreateBot.png">
+		<p>
+			Congrats! You've successfully made a Discord bot. We're nowhere near finished, though, we still need
+			to program it! After creating your bot user, another greeting should let you know you succeeded. Just below 
+			this, there should be an option to reveal your bot's token.
+		</p>
+		<img src = "token.png">
+		<p>	
+			Go ahead click to reveal the token, then copy it and open your editor of choice (make sure you save the changes to your app!).
+			Assign the token as a string to a const like so:
+		</p>
+		<div id = "code">
+			<pre><code id = "codeexample">
+	const token = 'Mjg1NjcyNzQyNjE4MDA1NTA1.C5VnvQ.WWB9vcbser1wU37LCqtGxws49wk';
+			</code></pre>
+		</div>
+		<p>Now all of the grunt work is done, and we can finally start programming the bot.</p><br>
+		<div id = "buttons">
+			<a class = "button" href = "DiscordAPIP2.html">Previous</a>
+			<a class = "button" href = "TableofContents.html">Table of Contents</a>
+			<a class = "button" href = "DiscordAPIP4.html">Next</a>
+		</div>
+	</div>
+</body>
+</html>
