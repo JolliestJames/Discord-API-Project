@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<header>
+	<meta charset = "UTF-8">
+	<title>How-to Project</title>
+	<link rel = "stylesheet" href = "style.css">
+	<script src = "DiscordAPIP.js"></script>
+</header>
+
+<body>
+	<div id = "main_div">
+		<h1>Closing Thoughts</h1>
+		<p>
+			We've gone over how to create a Discord app, server, bot, how to add the bot
+			to the server, and finally give that bot some cool features using Discord.js. Let's
+			take one final look at our bot's source code:
+		</p>
+			<div id = "code">
+			<code id = "codeexample">
+	const token = 'Mjg1NjcyNzQyNjE4MDA1NTA1.C5VnvQ.WWB9vcbser1wU37LCqtGxws49wk';
+	const Discord = require('discord.js');
+	const Bot = new Discord.Client();
+
+	Bot.login(token);
+
+	var General;
+
+	Bot.on('ready', function()
+	{
+		console.log("TestBot is online!");
+		General = Bot.guilds.find('name', 'TestServer').channels.find('name', 'general');
+		console.log(General);
+	});
+
+	Bot.on('guildMemberAdd', function(member)
+	{
+		General.sendMessage('Welcome to the server, ' + member + '!');
+	});
+
+	var Bad_Words = ["here", "are", "some", "bad", "words"];
+		
+	Bot.on('message', function(message)
+	{
+		for(var i = 0; i != Bad_Words.length; i++)
+		{
+			if(message.content.toLowerCase().includes(Bad_Words[i]))
+			{
+				message.delete();
+				message.reply('play nice. No inappropriate language!');
+				break;
+			}
+		}
+		
+		if(message.content.includes('dog') && message.author.username !== 'TestBot')
+		{
+			message.channel.send(':dog:');
+		}
+	});
+
+	Bot.on('messageUpdate', function(oldMessage, newMessage)
+	{
+		for(var i = 0; i < Bad_Words.length; i++)
+		{
+			if(newMessage.content.includes(Bad_Words[i]))
+			{
+				newMessage.delete();
+				newMessage.reply('play nice. No inappropriate language!');
+				break;
+			}
+		}
+	});
+
+			</code>
+		</div>
+		<p>
+			That's pretty cool. There's a lot more we can make our bot do, and if you understand how
+			all of the above code works, it shouldn't be too hard for you to figure out how to implement
+			more commands. Just refer to the 
+			<a href = "https://discord.js.org/#/docs/main/stable/general/welcome" target = "_blank">Discord.js documentation</a>
+			if you need to learn something specific about the library and you should be good. If any part of
+			this tutorial didn't seem clear, you can check out the table of contents and look at those
+			instructions again. Happy programming!
+		</p>
+		<img src = "discordlogo2.png" id = "tiny">
+		<br>
+		<div id = "buttons">
+			<a class = "button" href = "DiscordAPIP8.html">Previous</a>
+			<a class = "button" href = "TableofContents.html">Table of Contents</a>
+		</div>
+	</div>
+</body>
+</html>
